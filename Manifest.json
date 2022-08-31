@@ -1,0 +1,24 @@
+{
+  "name": "Scrolling tags",
+  "version": "1.0.0",
+  "description": "Scrolling to anywhere you want by Ctrl-key , you can tag it by Ctrl-Alt-key anywhere",
+  "manifest_version": 3,
+  "author": "diqye",
+  "action":{
+      "default_title": "Scrolling anywhere",
+      "default_icon": {
+        "16": "/icons/tag16.png",
+        "32": "/icons/tag32.png",
+        "48": "/icons/tag32.png",
+        "128": "/icons/tag128.png"
+      }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage","commands","scripting","tabs","tts"],
+  "content_scripts":[{
+    "matches": ["https://*/*","http://*/*","file://*/*"],
+    "js": ["contentScript.js"]
+  }]
+}
