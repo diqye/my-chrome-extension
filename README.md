@@ -14,3 +14,7 @@ clone https://github.com/diqye/scroll-tags.git
 在任何页面按下 `Ctrl-Alter-anykey` 会记录当前滚动条的位置，`Ctrl-anykey`则会跳至已经记录的位置。
 
 选中一段文字 ,按下`Ctrl-Alter-s`则会发音阅读，按下`Ctrl-Alter-l`则会弹出一个百度翻译的内容窗口.
+
+## 额外功能
+
+- 隐藏和自动跳过YouTube广告
