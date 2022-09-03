@@ -1,10 +1,10 @@
-
+mymain()
 function showTranslation(e){
   let selectionText = document.getSelection().getRangeAt(0).toString()
   if(selectionText != ""){
     window.open(`https://fanyi.baidu.com?from=diqye/#en/zh/${selectionText}`,
     "translate",
-    "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=437,height=400")
+    "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=437,height=500")
     return true
   }else{
     return false
@@ -51,8 +51,6 @@ function mymain() {
         document.scrollingElement.scrollTop = markVal
     }
   })
-
-  prettyUpBaiduFanyi()
 }
 
 function createTip(tipText) {
@@ -70,32 +68,4 @@ function createTip(tipText) {
   s.setProperty("padding", ".5em")
   s.setProperty("border-radius", ".5em")
   return p
-}
-
-mymain()
-
-function prettyUpBaiduFanyi(){
-  if(location.hostname == "fanyi.baidu.com" && location.search.includes("from=diqye")){
-    prettyUp()
-  }else{
-    void null
-  }
-  function prettyUp(){
-    let result = document.querySelector(".result-section")
-    if(result == null){
-      setTimeout(prettyUp,50)
-    }else{
-      document.querySelector(".footer").style.setProperty("display","none")
-      let s = result.style
-      s.setProperty("position","fixed")
-      s.setProperty("top","-31px")
-      s.setProperty("left","0")
-      s.setProperty("width","100vw")
-      s.setProperty("height","100vh")
-      s.setProperty("background","white")
-      s.setProperty("z-index","1000")
-      s.setProperty("overflow","auto")
-      setTimeout(prettyUp,200)
-    }
-  }
 }

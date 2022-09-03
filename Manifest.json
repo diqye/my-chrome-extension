@@ -23,5 +23,9 @@
   },{
     "matches": ["https://www.youtube.com/*","https://youtube.com/*"],
     "js": ["youtube/skipGdContent.js"]
+  },{
+    "matches": ["https://fanyi.baidu.com/*","http://fanyi.baidu.com/*"],
+    "include_globs": ["https://fanyi.baidu.com/*from=diqye*","http://fanyi.baidu.com/*from=diqye*"],
+    "js": ["baidu/makeItSmall.js"]
   }]
 }
