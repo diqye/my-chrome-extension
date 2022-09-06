@@ -2,9 +2,12 @@ mymain()
 function showTranslation(e){
   let selectionText = document.getSelection().getRangeAt(0).toString()
   if(selectionText != ""){
-    window.open(`https://fanyi.baidu.com?from=diqye/#en/zh/${selectionText}`,
+    let childWin = window.open(`https://fanyi.baidu.com?from=diqye/#en/zh/${selectionText}`,
     "translate",
     "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=437,height=500")
+    setTimeout(()=>{
+      childWin.close()
+    },60*1000)
     return true
   }else{
     return false
