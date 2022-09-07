@@ -1,11 +1,17 @@
 mymain()
+let timer = null
+let lastWin = null
 function showTranslation(e){
   let selectionText = document.getSelection().getRangeAt(0).toString()
   if(selectionText != ""){
     let childWin = window.open(`https://fanyi.baidu.com?from=diqye/#en/zh/${selectionText}`,
     "translate",
     "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=437,height=500")
-    setTimeout(()=>{
+    if(lastWin == childWin){
+      clearTimeout(timer)
+    }
+    lastWin = childWin
+    timer = setTimeout(()=>{
       childWin.close()
     },60*1000)
     return true
