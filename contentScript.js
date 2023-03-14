@@ -19,10 +19,19 @@ function showTranslation(e){
     return false
   }
 }
+function getSelectionText(){
+  let selectionText = document.getSelection().getRangeAt(0).toString()
+  if(selectionText == ""){
+    let inputEl = document.querySelector("textarea:focus,input:focus")
+    return inputEl.value.slice(inputEl.selectionStart,inputEl.selectionEnd)
+  }else{
+    return selectionText
+  }
+}
 
 let hotFunctions = {
   "KeyS":e=>{
-    let selectionText = document.getSelection().getRangeAt(0).toString()
+    let selectionText = getSelectionText()
     if(selectionText != ""){
       chrome.runtime.sendMessage({
         type: "speak",
